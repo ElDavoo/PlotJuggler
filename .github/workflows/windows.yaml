@@ -5,13 +5,7 @@ on: [push, pull_request]
 jobs:
 
   windows-build:
-    runs-on: ${{ matrix.windows-version }}
-    strategy:
-      fail-fast: false
-      matrix:
-        windows-version:
-          - 'windows-2019'
-          - 'windows-latest'
+    runs-on: 'windows-latest'
     env:
       CXXFLAGS: /MP
 
