@@ -31,12 +31,12 @@ jobs:
       - name: Build Plotjuggler
         shell: pwsh
         run: >
-          cmake -Ax64 -T host=x64 -B build -DCMAKE_INSTALL_PREFIX=install PlotJuggler;
-          cmake --build build --target install
+          cmake -Ax64 -T host=x64 -B build -DCMAKE_INSTALL_PREFIX=install -DCMAKE_BUILD_TYPE=Release PlotJuggler;
+          cmake --build build --target install --config Release
           
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build
+          path: build/bin/
   
