@@ -39,4 +39,10 @@ jobs:
         run: >
           cmake -Ax64 -T host=x64 -B build -DCMAKE_INSTALL_PREFIX=install PlotJuggler;
           cmake --build build --target install
- 
+          - uses: actions/upload-artifact@v3
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+  
